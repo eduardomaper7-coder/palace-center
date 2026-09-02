@@ -3,17 +3,46 @@ import { site, waLink, defaultWhatsappMessage } from '@/data/site';
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative overflow-hidden bg-ink-radial pt-32 pb-20 sm:pt-40 sm:pb-28">
-      {/* Alas doradas decorativas de fondo */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.07]">
+    <section
+      id="inicio"
+      className="relative flex min-h-[640px] items-center overflow-hidden bg-ink-radial pt-32 pb-20 sm:min-h-[760px] sm:pt-40 sm:pb-28"
+    >
+      {/* Vídeo de fondo — clase de blanco y negro aplicada al elemento como
+          respaldo visible (el archivo ya está codificado en escala de grises),
+          más un velo dorado en modo "color" y un degradado oscuro para
+          mantener el texto legible sobre cualquier fotograma. */}
+      <div className="absolute inset-0">
+        <video
+          className="hero-video h-full w-full object-cover grayscale contrast-[1.08] brightness-[0.85]"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/brand/hero-video-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="/videos/hero-bg.webm" type="video/webm" />
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
+        {/* Alternativa estática para quien prefiere movimiento reducido */}
         <Image
-          src="/images/brand/palace-logo-full.png"
+          src="/images/brand/hero-video-poster.jpg"
           alt=""
-          width={1100}
-          height={610}
-          className="w-[140%] max-w-none sm:w-[90%]"
+          fill
+          priority
+          className="hero-video-poster object-cover grayscale contrast-[1.08] brightness-[0.85]"
+        />
+
+        {/* Velo dorado sutil sobre el blanco y negro (identidad Palace Center) */}
+        <div aria-hidden="true" className="absolute inset-0 bg-gold-900/25 mix-blend-color" />
+        {/* Degradado de legibilidad: más oscuro arriba (bajo el header) y abajo (bajo el contenido) */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/55 to-ink/95"
         />
       </div>
+
       <div aria-hidden="true" className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold-500/10 blur-3xl" />
 
       <div className="container-x relative">

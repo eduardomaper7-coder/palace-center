@@ -144,3 +144,27 @@ html.js .reveal.is-visible {
 .wing-glow {
   filter: drop-shadow(0 0 24px rgba(201, 162, 39, 0.25));
 }
+
+/*
+ * Vídeo de fondo del Hero: por defecto se reproduce en bucle y se oculta la
+ * imagen estática de respaldo. Quien tenga activado "movimiento reducido" en
+ * su sistema ve en su lugar el fotograma estático (misma composición, sin
+ * animación), evitando un vídeo autoreproducido que no puede detener.
+ */
+.hero-video {
+  display: block;
+}
+
+.hero-video-poster {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+
+  .hero-video-poster {
+    display: block;
+  }
+}
