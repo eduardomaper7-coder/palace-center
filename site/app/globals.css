@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/*
+ * Definidos aquí como CSS plano (y no solo en tailwind.config.ts) porque se
+ * invocan mediante la propiedad `animation` en reglas CSS normales más abajo
+ * (no mediante clases utilitarias `animate-*`); Tailwind solo emite los
+ * `@keyframes` de su configuración cuando detecta la clase utilitaria
+ * correspondiente en el contenido escaneado.
+ */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+* {
+  scrollbar-color: #c9a227 #131211;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #0a0908;
+  color: #f6f2e9;
+}
+
+::selection {
+  background-color: #c9a227;
+  color: #0a0908;
+}
+
+/* Foco visible accesible y consistente en todo el sitio */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #e6cd7e;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.container-x {
+  @apply mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10;
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 text-xs sm:text-sm tracking-[0.28em] uppercase text-gold-300 font-semibold;
+}
+
+.section-title {
+  @apply font-display text-3xl sm:text-4xl md:text-5xl leading-tight text-cream;
+}
+
+.gold-rule {
+  @apply h-px w-16 bg-gold-gradient;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 min-h-[48px];
+}
+
+.btn-primary {
+  @apply btn bg-gold-gradient text-ink shadow-gold hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0;
+}
+
+.btn-outline {
+  @apply btn border border-gold-500/60 text-cream hover:bg-gold-500/10 hover:border-gold-300 hover:-translate-y-0.5 active:translate-y-0;
+}
+
+.btn-ghost {
+  @apply btn text-cream/90 hover:text-gold-200;
+}
+
+.card-surface {
+  @apply rounded-2xl border border-ink-line bg-ink-soft/80 backdrop-blur-sm shadow-card;
+}
+
+/*
+ * Animación de aparición al hacer scroll ("reveal"), aplicada como mejora
+ * progresiva: por defecto todo el contenido es 100% visible (sin JS, con JS
+ * bloqueado, o en herramientas que capturan la página sin desplazarse, el
+ * contenido nunca desaparece). Solo cuando el pequeño script de arranque en
+ * <body> confirma que JS está activo (clase `.js` en <html>) el contenido
+ * empieza oculto y se revela mediante IntersectionObserver.
+ */
+html.js .reveal {
+  opacity: 0;
+}
+
+html.js .reveal.is-visible {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal {
+    opacity: 1;
+    animation: none !important;
+  }
+}
+
+.ornament-line {
+  background-image: linear-gradient(90deg, transparent, #c9a227, transparent);
+  height: 1px;
+}
+
+.wing-glow {
+  filter: drop-shadow(0 0 24px rgba(201, 162, 39, 0.25));
+}
