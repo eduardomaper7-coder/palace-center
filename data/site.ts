@@ -27,11 +27,11 @@ export const site = {
     whatsapp: '34662128572',
   },
   email: 'info@sietenotasbaila.com',
-  mapsQuery: 'Calle Nápoles 11, 28912 Leganés, Madrid, España',
+  mapsQuery: 'Palace Center, Calle Nápoles 11, 28912 Leganés, Madrid, España',
   mapsEmbedSrc:
-    'https://www.google.com/maps?q=Calle+N%C3%A1poles+11+28912+Legan%C3%A9s+Madrid+Espa%C3%B1a&output=embed',
+    'https://www.google.com/maps?q=Palace+Center%2C+Calle+N%C3%A1poles+11%2C+28912+Legan%C3%A9s%2C+Madrid%2C+Espa%C3%B1a&output=embed',
   mapsDirectionsUrl:
-    'https://www.google.com/maps/dir/?api=1&destination=Calle+N%C3%A1poles+11%2C+28912+Legan%C3%A9s%2C+Madrid',
+    'https://www.google.com/maps/dir/?api=1&destination=Palace+Center%2C+Calle+N%C3%A1poles+11%2C+28912+Legan%C3%A9s%2C+Madrid',
   social: {
     instagram: '',
     facebook: '',

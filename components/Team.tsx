@@ -26,16 +26,20 @@ export default function Team() {
               data-delay={(i % 3) * 110}
             >
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink">
-                <Image
-                  src={t.image}
-                  alt={`${t.name} — ${t.role}`}
-                  fill
-                  sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
-                  className={`object-cover transition-transform duration-500 group-hover:scale-105 ${
-                    t.lowRes ? 'object-top' : ''
-                  }`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-70" />
+                {t.image && (
+                  <>
+                    <Image
+                      src={t.image}
+                      alt={`${t.name} — ${t.role}`}
+                      fill
+                      sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
+                      className={`object-cover transition-transform duration-500 group-hover:scale-105 ${
+                        t.lowRes ? 'object-top' : ''
+                      }`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-70" />
+                  </>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="font-display text-xl text-cream">{t.name}</h3>
