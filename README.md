@@ -55,15 +55,10 @@ Next.js (Netlify, Railway, un VPS con `next start`, etc.). No requiere base de d
 Este proyecto se ha generado a partir de los carteles/material gráfico proporcionado. Antes de
 publicar la web en producción falta:
 
-1. **Logotipo original.** No se entregó un archivo de logotipo vectorial/transparente
-   independiente. Se ha recortado y aislado (fondo transparente) a partir de los carteles como
-   versión **provisional**, en `public/images/brand/palace-logo-full.png` y
-   `palace-logo-header.png`. Se recomienda sustituirlo por el archivo original en SVG o PNG de
-   alta resolución en cuanto esté disponible, y regenerar el favicon a partir de él.
-2. **Foto de Ruth Carbonero Marcos.** La única fuente disponible era una miniatura circular muy
+1. **Foto de Ruth Carbonero Marcos.** La única fuente disponible era una miniatura circular muy
    pequeña dentro de uno de los carteles (`public/images/team/ruth-carbonero.webp`, 174×138 px).
    Se recomienda una fotografía en mayor resolución.
-3. **Datos fiscales/legales.** `app/aviso-legal/page.tsx` y `app/politica-privacidad/page.tsx`
+2. **Datos fiscales/legales.** `app/aviso-legal/page.tsx` y `app/politica-privacidad/page.tsx`
    contienen marcadores `[PENDIENTE DE CONFIRMAR]` para la razón social, el NIF/CIF y el
    registro mercantil. Hay que sustituirlos por los datos reales (idealmente revisados por un
    asesor legal) antes de publicar.

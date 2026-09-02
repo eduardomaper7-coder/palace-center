@@ -43,8 +43,8 @@ export default function Header() {
           <Image
             src="/images/brand/palace-logo-header.png"
             alt="Palace Center"
-            width={168}
-            height={77}
+            width={666}
+            height={375}
             priority
             className="h-12 w-auto sm:h-14"
           />

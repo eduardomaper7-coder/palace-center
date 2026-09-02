@@ -24,8 +24,8 @@ export default function Footer() {
             <Image
               src="/images/brand/palace-logo-header.png"
               alt="Palace Center"
-              width={168}
-              height={77}
+              width={666}
+              height={375}
               className="h-12 w-auto"
             />
             <p className="mt-4 text-sm text-cream-muted">Cuerpo · Mente · Alma</p>

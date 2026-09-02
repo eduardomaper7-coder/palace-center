@@ -50,8 +50,8 @@ export default function Hero() {
           <Image
             src="/images/brand/palace-logo-full.png"
             alt="Palace Center — Cuerpo · Mente · Alma"
-            width={700}
-            height={388}
+            width={666}
+            height={375}
             priority
             className="wing-glow mb-4 h-auto w-64 sm:w-80"
           />
