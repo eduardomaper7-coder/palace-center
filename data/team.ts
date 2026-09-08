@@ -53,6 +53,7 @@ export const teachers: Teacher[] = [
     role: 'Entrenamiento Funcional y Ejercicio Adaptado',
     extra: 'Colegiada nº 69147',
     focus: 'salud',
+    image: '/images/team/ruth-carbonero-marcos.png',
     whatsappActivity: 'Entrenamiento funcional / oncológico',
   },
 ];
