@@ -1,4 +1,4 @@
-import { generalSchedule } from '@/data/schedule';
+import { classSchedules, generalSchedule } from '@/data/schedule';
 import { waLink, defaultWhatsappMessage } from '@/data/site';
 
 export default function Schedule() {
@@ -8,16 +8,37 @@ export default function Schedule() {
         <div className="mx-auto max-w-2xl text-center reveal">
           <span className="eyebrow justify-center">Horarios</span>
           <h2 id="schedule-title" className="section-title mt-4">
-            Horario general del centro
+            Horarios de clases y del centro
           </h2>
           <div className="gold-rule mx-auto mt-6" />
           <p className="mt-6 text-cream-dim">
-            Los horarios de cada actividad concreta pueden variar. Consúltanos para conocer el
-            horario exacto de la disciplina que te interesa.
+            Encuentra tu actividad y el grupo que mejor encaja contigo. Para otras disciplinas,
+            consúltanos y te ayudamos a elegir.
           </p>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-3xl gap-6 sm:grid-cols-2">
+        <div className="mt-14 grid items-start gap-6 lg:grid-cols-2">
+          {classSchedules.map((activity) => (
+            <article key={activity.activity} className="card-surface reveal p-6 sm:p-8">
+              <h3 className="font-display text-2xl text-cream">{activity.activity}</h3>
+              <p className="mt-2 text-sm text-gold-300">{activity.teacher}</p>
+              <ul className="mt-6 space-y-4">
+                {activity.sessions.map((session) => (
+                  <li key={`${session.group}-${session.days}`} className="border-b border-ink-line pb-4">
+                    <p className="font-semibold text-cream">{session.group}</p>
+                    <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                      <span className="text-sm text-cream-dim">{session.days}</span>
+                      <span className="whitespace-nowrap font-display text-xl text-gold-200">{session.hours}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <h3 className="reveal mt-14 text-center font-display text-2xl text-cream">Horario general del centro</h3>
+        <div className="mx-auto mt-6 grid max-w-3xl gap-6 sm:grid-cols-2">
           {generalSchedule.map((block, i) => (
             <div key={block.days} className="card-surface reveal p-8" data-delay={i * 120}>
               <h3 className="font-display text-2xl text-cream">{block.days}</h3>

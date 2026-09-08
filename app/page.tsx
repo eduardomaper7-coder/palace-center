@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Pillars from '@/components/Pillars';
 import Activities from '@/components/Activities';
+import Therapies from '@/components/Therapies';
 import FunctionalTraining from '@/components/FunctionalTraining';
 import Team from '@/components/Team';
 import Schedule from '@/components/Schedule';
@@ -18,6 +19,7 @@ export default function HomePage() {
         <Hero />
         <Pillars />
         <Activities />
+        <Therapies />
         <FunctionalTraining />
         <Team />
         <Schedule />

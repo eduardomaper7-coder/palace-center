@@ -1,5 +1,8 @@
 import { functionalSchedule, functionalPricing } from '@/data/schedule';
 import { waLink } from '@/data/site';
+import { teachers } from '@/data/team';
+
+const ruth = teachers.find((teacher) => teacher.slug === 'ruth-carbonero-marcos');
 
 const blocks = [
   {
@@ -34,6 +37,9 @@ export default function FunctionalTraining() {
             acompañar tu bienestar físico en cada etapa, con seguimiento profesional y adaptado a
             tu ritmo.
           </p>
+          <ul className="mt-4 space-y-2 text-sm text-gold-200">
+            {ruth?.qualifications?.map((qualification) => <li key={qualification}>{qualification}</li>)}
+          </ul>
         </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">

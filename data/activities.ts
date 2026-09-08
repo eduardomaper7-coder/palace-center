@@ -7,8 +7,7 @@ export type ActivityCategory = {
   image?: string;
 };
 
-// Contenido tomado literalmente del cartel "Gran Inauguración" y del resto de
-// carteles proporcionados. No se han añadido actividades no listadas en el material.
+// Actividades de los carteles proporcionados y actualizaciones del centro.
 export const activityCategories: ActivityCategory[] = [
   {
     id: 'cuerpo-mente',
@@ -16,7 +15,7 @@ export const activityCategories: ActivityCategory[] = [
     pillar: 'cuerpo',
     description:
       'Disciplinas de movimiento consciente y entrenamiento que fortalecen el cuerpo y calman la mente.',
-    items: ['Pilates', 'Yoga', 'Taichi', 'Entrenamientos Personales'],
+    items: ['Pilates', 'Readaptación corporal', 'Entrenamiento funcional', 'Yoga', 'Taichi', 'Entrenamientos Personales'],
   },
   {
     id: 'artes-marciales',
@@ -24,7 +23,7 @@ export const activityCategories: ActivityCategory[] = [
     pillar: 'cuerpo',
     description:
       'Un equipo con recorrido en competición y docencia, para todos los niveles, desde la iniciación hasta el alto rendimiento.',
-    items: ['Karate', 'Kung Fu', 'Full Contact', 'Kickboxing', 'Jujutsu', 'Boxeo', 'Defensa Personal'],
+    items: ['Karate', 'Kung Fu', 'Full Contact', 'Kickboxing', 'Jiu-jitsu', 'Boxeo', 'Defensa Personal', 'Artes marciales en familia'],
     image: '/images/brand/hero-artes-marciales.jpg',
   },
   {
@@ -33,7 +32,7 @@ export const activityCategories: ActivityCategory[] = [
     pillar: 'alma',
     description:
       'Espacios de calma y trabajo energético que acompañan el equilibrio interior.',
-    items: ['Reiki', 'Constelaciones', 'Registros Akáshicos', 'Sanaciones', 'Regresiones', 'Limpiezas Energéticas'],
+    items: ['Terapia floral', 'Limpieza energética con péndulo hebreo', 'Constelaciones familiares', 'Reiki', 'Registros Akáshicos', 'Sanaciones', 'Regresiones', 'Limpiezas Energéticas'],
   },
   {
     id: 'salud-rehabilitacion',

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { activityCategories } from '@/data/activities';
 import { waLink } from '@/data/site';
+import { familyActivity } from '@/data/schedule';
 
 export default function Activities() {
   return (
@@ -14,7 +15,30 @@ export default function Activities() {
           <div className="gold-rule mx-auto mt-6" />
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <article className="card-surface reveal mt-14 border border-gold-500/40 p-7 sm:p-10" aria-labelledby="family-title">
+          <span className="eyebrow">Nueva actividad · Padres e hijos</span>
+          <div className="mt-4 grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-center">
+            <div>
+              <h3 id="family-title" className="font-display text-3xl text-cream sm:text-4xl">Entrenad juntos. Creced en familia.</h3>
+              <p className="mt-4 text-cream-dim">
+                Compartid algo más que la rutina: un rato en el tatami para aprender artes marciales,
+                superar retos juntos y disfrutar del tiempo en familia. Padres e hijos participan
+                en una misma actividad con Juan Carlos Palacios Guerra.
+              </p>
+              <p className="mt-3 text-sm text-gold-200">Una nueva forma de compartir movimiento, respeto y complicidad.</p>
+            </div>
+            <div className="rounded-2xl bg-ink/60 p-6">
+              <h4 className="font-display text-xl text-cream">{familyActivity.title}</h4>
+              <p className="mt-3 text-sm text-cream-dim">{familyActivity.days}</p>
+              <p className="mt-1 font-display text-2xl text-gold-200">{familyActivity.hours}</p>
+              <a href={waLink('Hola, me gustaría recibir información sobre las clases de artes marciales para padres e hijos con Juan Carlos.')} target="_blank" rel="noopener noreferrer" className="btn-primary mt-6">
+                Quiero entrenar en familia
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
           {activityCategories.map((cat, i) => (
             <article
               key={cat.id}

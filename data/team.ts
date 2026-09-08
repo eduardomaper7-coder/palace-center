@@ -7,6 +7,7 @@ export type Teacher = {
   focus: TeacherFocus;
   image?: string;
   extra?: string;
+  qualifications?: string[];
   whatsappActivity: string;
   lowRes?: boolean;
 };
@@ -52,8 +53,28 @@ export const teachers: Teacher[] = [
     name: 'Ruth Carbonero Marcos',
     role: 'Entrenamiento Funcional y Ejercicio Adaptado',
     extra: 'Colegiada nº 69147',
+    qualifications: [
+      'Licenciada en CAFYD (Ciencias de la Actividad Física y del Deporte), en alto rendimiento.',
+      'Máster en Readaptación y Prevención de Lesiones.',
+    ],
     focus: 'salud',
     image: '/images/team/ruth-carbonero-marcos.png',
     whatsappActivity: 'Entrenamiento funcional / oncológico',
+  },
+  {
+    slug: 'jose-javier-ofretorio',
+    name: 'José Javier Ofretorio',
+    role: 'Profesor de Boxeo y Entrenador Personal',
+    focus: 'artes-marciales',
+    image: '/images/team/jose-javier-ofretorio.png',
+    whatsappActivity: 'Boxeo y entrenamiento personal',
+  },
+  {
+    slug: 'jose-manuel-urteaga',
+    name: 'José Manuel Urteaga',
+    role: 'Profesor de Pilates y Readaptación Corporal',
+    extra: 'Instructor de Jiu-jitsu y Entrenamiento Funcional',
+    focus: 'artes-marciales',
+    whatsappActivity: 'Pilates, readaptación corporal, jiu-jitsu y entrenamiento funcional con José Manuel Urteaga',
   },
 ];

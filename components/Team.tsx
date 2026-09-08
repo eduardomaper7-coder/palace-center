@@ -26,7 +26,7 @@ export default function Team() {
               data-delay={(i % 3) * 110}
             >
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink">
-                {t.image && (
+                {t.image ? (
                   <>
                     <Image
                       src={t.image}
@@ -39,12 +39,21 @@ export default function Team() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-70" />
                   </>
+                ) : (
+                  <div className="flex h-full items-center justify-center bg-gradient-to-b from-gold-500/10 to-ink" aria-hidden="true">
+                    <span className="font-display text-6xl text-gold-200/60">{t.name.split(' ').map((part) => part[0]).join('')}</span>
+                  </div>
                 )}
               </div>
               <div className="p-6">
                 <h3 className="font-display text-xl text-cream">{t.name}</h3>
                 <p className="mt-1 text-sm font-medium text-gold-300">{t.role}</p>
                 {t.extra && <p className="mt-0.5 text-xs text-cream-muted">{t.extra}</p>}
+                {t.qualifications && (
+                  <ul className="mt-3 space-y-2 text-sm text-cream-dim">
+                    {t.qualifications.map((qualification) => <li key={qualification}>{qualification}</li>)}
+                  </ul>
+                )}
                 <a
                   href={waLink(`Hola, he visto la web de Palace Center y me gustaría recibir información sobre ${t.whatsappActivity}.`)}
                   target="_blank"
